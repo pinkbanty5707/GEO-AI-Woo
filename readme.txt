@@ -1,6 +1,6 @@
 === GEO AI Woo ===
 Contributors: madeburo
-Tags: ai, seo, woocommerce, llms.txt, chatgpt, claude, gemini, perplexity
+Tags: ai, seo, woocommerce, llms.txt, chatgpt, claude, gemini, perplexity, yandex
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
@@ -84,6 +84,14 @@ The plugin writes `llms.txt` and `llms-full.txt` directly to your WordPress root
 = Can I hide out-of-stock products from llms.txt? =
 
 Yes. Go to Settings > GEO AI Woo and set the "Out-of-Stock Products" option to "Always hide" or let it follow your WooCommerce visibility settings.
+
+= Can I auto-generate AI descriptions for my content? =
+
+Yes. Go to Settings > GEO AI Woo > AI Description Generation, choose Claude (Anthropic) or OpenAI as your provider, and enter your API key. A "Generate with AI" button will appear in the meta box on each post/page/product. You can also bulk-generate descriptions for all content at once from the settings page.
+
+= Is there a REST API or CLI access? =
+
+Yes. The plugin exposes a REST API at `/wp-json/geo-ai-woo/v1/` with endpoints for reading llms.txt content, checking file status, and triggering regeneration. WP-CLI commands are also available: `wp geo-ai-woo regenerate`, `status`, `export`, and `import`.
 
 == Screenshots ==
 

@@ -18,7 +18,7 @@ An open-source WordPress plugin that optimizes your site for AI search engines l
 
 ### llms.txt Generator
 
-Automatically generates `/llms.txt` and `/llms-full.txt` files that help AI systems understand your content.
+Automatically generates `/llms.txt` and `/llms-full.txt` static files at your WordPress root for maximum performance. Falls back to rewrite rules if the filesystem is not writable.
 
 **Supported AI Crawlers:**
 | Bot | Provider |
@@ -34,17 +34,53 @@ Automatically generates `/llms.txt` and `/llms-full.txt` files that help AI syst
 
 ### AI Meta Box
 
-Add AI-specific metadata to pages, posts, and products:
+Add AI-specific metadata to any post, page, or product:
 
-- **AI Description** — Concise summary for LLMs
-- **AI Keywords** — Topics and context
-- **Exclude from AI** — Opt-out specific content from being indexed
+- **AI Description** — Concise summary for LLMs (max 200 characters)
+- **AI Keywords** — Topics and context hints
+- **Exclude from AI** — Opt specific content out of llms.txt entirely
+- **Generate with AI** — One-click description generation via Claude or OpenAI
 
 ### WooCommerce Integration
 
-- Products are automatically included in llms.txt
-- Enhanced Product Schema for AI readability
-- Category and attribute mapping
+- Products automatically included in llms.txt with price, stock status, ratings, and attributes
+- Variable product support with price ranges and available variations
+- Sale price display (regular vs. sale)
+- Enhanced product Schema.org markup for AI readability
+- Dedicated GEO AI tab in the product data panel
+
+### AI Auto-Generation
+
+- Generate AI descriptions via **Claude (Anthropic)** or **OpenAI** APIs
+- Customizable prompt template with `{title}`, `{content}`, `{type}` placeholders
+- Bulk generation for all posts without descriptions (up to 50 at a time)
+- Rate limiting and encrypted API key storage
+
+### SEO & AI Visibility
+
+- `<meta name="llms">` and `<meta name="ai-description">` tags in page `<head>`
+- HTTP `Link` header pointing to llms.txt (`rel="ai-content-index"`)
+- JSON-LD Schema.org structured data (WebSite + Article/Product)
+- Automatic detection of Yoast, Rank Math, AIOSEO, SEOPress to avoid conflicts
+- Per-bot `robots.txt` directives (Allow/Disallow) based on your crawler settings
+
+### Multilingual Support
+
+- Compatible with **WPML**, **Polylang**, and **TranslatePress**
+- Generates separate llms.txt files per language
+- Hreflang alternate links in SEO meta tags and HTTP headers
+
+### REST API & WP-CLI
+
+- REST API at `/wp-json/geo-ai-woo/v1/` for programmatic access
+- WP-CLI commands: `regenerate`, `status`, `export`, `import`
+
+### Dashboard & Tracking
+
+- Dashboard widget with indexed/excluded content counts
+- AI bot crawl tracking with GDPR-compliant IP anonymization
+- Bot activity summary for the last 30 days
+- Bulk Edit and Quick Edit support for AI fields in list tables
 
 ---
 
@@ -111,19 +147,30 @@ GEO AI Woo is fully translatable and includes:
 
 ```text
 geo-ai-woo/
-├── geo-ai-woo.php              # Main plugin file
-├── includes/                   # Core functionality classes
-│   ├── class-llms-generator.php
-│   ├── class-meta-box.php
-│   ├── class-settings.php
-│   └── class-woocommerce.php
-├── languages/                  # Translation files
-├── assets/                     # CSS and JS for admin
-├── README.md                   # This documentation
-├── CHANGELOG.md                # List of changes
-├── LICENSE                     # GPL v2 License
-├── readme.txt                  # WordPress.org plugin directory format
-└── uninstall.php               # Cleanup script on plugin deletion
+├── geo-ai-woo.php              # Main plugin file — bootstrap, hooks, activation/deactivation
+├── uninstall.php               # Cleanup on plugin deletion
+├── includes/                   # All PHP classes (one per file)
+│   ├── class-llms-generator.php    # Core llms.txt generation and static file writing
+│   ├── class-settings.php          # Admin settings page
+│   ├── class-meta-box.php          # AI meta box for posts/pages
+│   ├── class-woocommerce.php       # WooCommerce integration
+│   ├── class-ai-generator.php      # Claude/OpenAI API integration
+│   ├── class-seo-headers.php       # Meta tags, HTTP headers, JSON-LD
+│   ├── class-multilingual.php      # WPML/Polylang/TranslatePress support
+│   ├── class-crawl-tracker.php     # Bot visit logging and statistics
+│   ├── class-rest-api.php          # REST API endpoints
+│   ├── class-cli.php               # WP-CLI commands
+│   ├── class-bulk-edit.php         # Bulk Edit / Quick Edit support
+│   ├── class-dashboard-widget.php  # Dashboard widget
+│   └── class-admin-notices.php     # Admin notices
+├── assets/
+│   ├── css/admin.css           # Admin styles
+│   └── js/admin.js             # Admin JavaScript
+├── languages/                  # Translation files (.pot, .po, .mo)
+├── README.md                   # This file
+├── CHANGELOG.md                # Version history
+├── LICENSE                     # GPL v2
+└── readme.txt                  # WordPress.org plugin directory format
 ```
 
 ---
