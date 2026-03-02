@@ -1,0 +1,67 @@
+/**
+ * GEO AI Woo — Admin Styles
+ *
+ * @package GeoAiWoo
+ */
+
+/* Meta box */
+.geo-ai-woo-meta-box textarea {
+	width: 100%;
+}
+
+.geo-ai-woo-meta-box input[type="text"] {
+	width: 100%;
+}
+
+.geo-ai-woo-meta-box .description {
+	font-style: italic;
+	color: #666;
+}
+
+/* Settings page — status box */
+.geo-ai-woo-status {
+	background: #fff;
+	padding: 15px;
+	margin: 20px 0;
+	border-left: 4px solid #0073aa;
+}
+
+.geo-ai-woo-status h3 {
+	margin-top: 0;
+}
+
+/* WooCommerce product panel */
+#geo_ai_woo_product_data .options_group h4 {
+	padding-left: 12px;
+}
+
+#geo_ai_woo_product_data .geo-ai-woo-preview {
+	background: #f5f5f5;
+	padding: 10px;
+	margin: 12px;
+	font-size: 12px;
+	overflow-x: auto;
+	font-family: monospace;
+	white-space: pre-wrap;
+	word-wrap: break-word;
+}
+
+/* Bot rules table */
+.geo-ai-woo-bot-table {
+	max-width: 600px;
+}
+
+/* Regenerate button feedback */
+#geo-ai-woo-regenerate-status {
+	margin-left: 10px;
+	font-style: italic;
+	color: #666;
+}
+
+#geo-ai-woo-regenerate-status.success {
+	color: #46b450;
+}
+
+#geo-ai-woo-regenerate-status.error {
+	color: #dc3232;
+}
