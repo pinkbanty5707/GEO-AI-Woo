@@ -2,7 +2,7 @@
 Contributors: madeburo
 Tags: ai, seo, woocommerce, llms.txt, chatgpt
 Requires at least: 6.0
-Tested up to: 6.7
+Tested up to: 6.9
 Requires PHP: 7.4
 Stable tag: 0.4.0
 License: GPLv2 or later
@@ -133,6 +133,8 @@ Yes. The plugin exposes a REST API at `/wp-json/geo-ai-woo/v1/` with endpoints f
 * Added "Third-Party Services" disclosure section with Anthropic and OpenAI privacy policies
 * Added API data disclosure notice in AI Description Generation settings
 * Reduced readme tags to 5 (guideline 12)
+* Removed `load_plugin_textdomain()` — translations handled automatically by WordPress.org
+* Updated "Tested up to" to WordPress 6.9
 
 = 0.3.0 =
 **Multilingual Support**

@@ -14,9 +14,13 @@ All notable changes to GEO AI Woo will be documented in this file.
 - API data disclosure notice in AI Description Generation settings section
 - Links to Anthropic and OpenAI privacy policies in admin UI
 
+### Removed
+- `load_plugin_textdomain()` call — translations are loaded automatically by WordPress.org
+
 ### Changed
 - Version bump 0.3.0 → 0.4.0
 - Reduced readme.txt tags from 9 to 5 (WordPress.org guideline 12 compliance)
+- Updated "Tested up to" to WordPress 6.9
 
 ## [0.3.0] - 2026-03-02
 

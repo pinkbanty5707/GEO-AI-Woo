@@ -88,8 +88,7 @@ final class Geo_Ai_Woo {
      * Initialize hooks
      */
     private function init_hooks() {
-        // Load text domain
-        add_action( 'plugins_loaded', array( $this, 'load_textdomain' ) );
+        // Text domain is loaded automatically by WordPress for plugins hosted on WordPress.org.
 
         // Initialize components
         add_action( 'init', array( $this, 'init' ), 0 );
@@ -124,13 +123,6 @@ final class Geo_Ai_Woo {
     /**
      * Load plugin text domain
      */
-    public function load_textdomain() {
-        load_plugin_textdomain(
-            'geo-ai-woo',
-            false,
-            dirname( GEO_AI_WOO_PLUGIN_BASENAME ) . '/languages'
-        );
-    }
 
     /**
      * Initialize plugin components
