@@ -714,6 +714,18 @@ class Geo_Ai_Woo_Settings {
      */
     public function render_ai_section() {
         echo '<p>' . esc_html__( 'Use Claude or OpenAI to automatically generate AI descriptions for your posts and products.', 'geo-ai-woo' ) . '</p>';
+        echo '<div class="notice notice-info inline" style="margin:10px 0;padding:8px 12px;"><p>';
+        echo wp_kses(
+            __( 'When enabled, this feature sends your post titles and content excerpts to your chosen AI provider to generate descriptions. Review their privacy policies: <a href="https://www.anthropic.com/privacy" target="_blank" rel="noopener">Anthropic</a> | <a href="https://openai.com/privacy" target="_blank" rel="noopener">OpenAI</a>.', 'geo-ai-woo' ),
+            array(
+                'a' => array(
+                    'href'   => array(),
+                    'target' => array(),
+                    'rel'    => array(),
+                ),
+            )
+        );
+        echo '</p></div>';
     }
 
     /**

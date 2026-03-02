@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the GEO AI Woo package.
 msgid ""
 msgstr ""
-"Project-Id-Version: GEO AI Woo 0.3.0\n"
+"Project-Id-Version: GEO AI Woo 0.4.0\n"
 "Report-Msgid-Bugs-To: https://github.com/madebureau/geo-ai-woo/issues\n"
 "POT-Creation-Date: 2026-03-02 12:00+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -455,6 +455,10 @@ msgstr ""
 
 #: includes/class-settings.php
 msgid "Use Claude or OpenAI to automatically generate AI descriptions for your posts and products."
+msgstr ""
+
+#: includes/class-settings.php
+msgid "When enabled, this feature sends your post titles and content excerpts to your chosen AI provider to generate descriptions. Review their privacy policies: <a href=\"https://www.anthropic.com/privacy\" target=\"_blank\" rel=\"noopener\">Anthropic</a> | <a href=\"https://openai.com/privacy\" target=\"_blank\" rel=\"noopener\">OpenAI</a>."
 msgstr ""
 
 #: includes/class-settings.php

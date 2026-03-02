@@ -60,20 +60,20 @@ class Geo_Ai_Woo_Dashboard_Widget {
 		$stats = $this->get_stats();
 		?>
 		<div class="geo-ai-woo-dashboard">
-			<div class="geo-ai-woo-dashboard-stats">
-				<div class="geo-ai-woo-stat">
-					<span class="geo-ai-woo-stat-number"><?php echo esc_html( $stats['indexed_count'] ); ?></span>
-					<span class="geo-ai-woo-stat-label"><?php esc_html_e( 'Indexed', 'geo-ai-woo' ); ?></span>
-				</div>
-				<div class="geo-ai-woo-stat">
-					<span class="geo-ai-woo-stat-number"><?php echo esc_html( $stats['excluded_count'] ); ?></span>
-					<span class="geo-ai-woo-stat-label"><?php esc_html_e( 'Excluded', 'geo-ai-woo' ); ?></span>
-				</div>
-				<div class="geo-ai-woo-stat">
-					<span class="geo-ai-woo-stat-number"><?php echo esc_html( $stats['file_count'] ); ?></span>
-					<span class="geo-ai-woo-stat-label"><?php esc_html_e( 'Files', 'geo-ai-woo' ); ?></span>
-				</div>
-			</div>
+			<ul class="geo-ai-woo-dashboard-stats">
+				<li>
+					<span class="label"><?php esc_html_e( 'Indexed', 'geo-ai-woo' ); ?></span>
+					<span class="value"><?php echo esc_html( $stats['indexed_count'] ); ?></span>
+				</li>
+				<li>
+					<span class="label"><?php esc_html_e( 'Excluded', 'geo-ai-woo' ); ?></span>
+					<span class="value"><?php echo esc_html( $stats['excluded_count'] ); ?></span>
+				</li>
+				<li>
+					<span class="label"><?php esc_html_e( 'Files', 'geo-ai-woo' ); ?></span>
+					<span class="value"><?php echo esc_html( $stats['file_count'] ); ?></span>
+				</li>
+			</ul>
 
 			<table class="widefat geo-ai-woo-dashboard-table">
 				<tbody>

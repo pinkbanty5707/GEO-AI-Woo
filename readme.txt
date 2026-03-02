@@ -1,10 +1,10 @@
 === GEO AI Woo ===
 Contributors: madeburo
-Tags: ai, seo, woocommerce, llms.txt, chatgpt, claude, gemini, perplexity, yandex
+Tags: ai, seo, woocommerce, llms.txt, chatgpt
 Requires at least: 6.0
 Tested up to: 6.7
 Requires PHP: 7.4
-Stable tag: 0.3.0
+Stable tag: 0.4.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -55,6 +55,28 @@ GEO AI Woo generates `/llms.txt` and `/llms-full.txt` files that help AI search 
 
 The plugin works out of the box with sensible defaults.
 
+== Third-Party Services ==
+
+This plugin optionally connects to external AI services for generating content descriptions. These connections are **disabled by default** and only activate when you explicitly configure an AI provider in Settings > GEO AI Woo > AI Description Generation.
+
+= Anthropic (Claude) =
+
+When you select Claude as your AI provider and click "Generate with AI", the plugin sends your post title and content excerpt to the Anthropic API to generate an AI-optimized description.
+
+* API endpoint: `https://api.anthropic.com/v1/messages`
+* [Anthropic Terms of Service](https://www.anthropic.com/terms)
+* [Anthropic Privacy Policy](https://www.anthropic.com/privacy)
+
+= OpenAI =
+
+When you select OpenAI as your AI provider and click "Generate with AI", the plugin sends your post title and content excerpt to the OpenAI API to generate an AI-optimized description.
+
+* API endpoint: `https://api.openai.com/v1/chat/completions`
+* [OpenAI Terms of Use](https://openai.com/terms)
+* [OpenAI Privacy Policy](https://openai.com/privacy)
+
+No data is sent to any external service unless you explicitly enable and configure the AI Description Generation feature. Your API key is stored encrypted in the WordPress database and is never exposed in the admin interface.
+
 == Frequently Asked Questions ==
 
 = What is llms.txt? =
@@ -102,6 +124,15 @@ Yes. The plugin exposes a REST API at `/wp-json/geo-ai-woo/v1/` with endpoints f
 5. Live preview of llms.txt content
 
 == Changelog ==
+
+= 0.4.0 =
+**Bug Fix**
+* Fixed Cyrillic and special character encoding in llms.txt (HTML entities now properly decoded to UTF-8)
+
+**WordPress.org Compliance**
+* Added "Third-Party Services" disclosure section with Anthropic and OpenAI privacy policies
+* Added API data disclosure notice in AI Description Generation settings
+* Reduced readme tags to 5 (guideline 12)
 
 = 0.3.0 =
 **Multilingual Support**
@@ -190,6 +221,9 @@ Yes. The plugin exposes a REST API at `/wp-json/geo-ai-woo/v1/` with endpoints f
 * Multilingual support (7 languages)
 
 == Upgrade Notice ==
+
+= 0.4.0 =
+Fixes Cyrillic/special character encoding in llms.txt. Adds WordPress.org plugin guidelines compliance (third-party service disclosures). Regenerate your llms.txt after updating.
 
 = 0.3.0 =
 New features: multilingual support (WPML/Polylang/TranslatePress), REST API, WP-CLI commands, AI auto-generation (Claude/OpenAI), dashboard widget with bot tracking. Settings are automatically migrated.

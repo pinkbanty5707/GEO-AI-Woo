@@ -117,6 +117,19 @@ class Geo_Ai_Woo_Crawl_Tracker {
 		global $wpdb;
 		$table_name = self::get_table_name();
 
+		// Silently skip if table doesn't exist yet
+		$table_exists = $wpdb->get_var(
+			$wpdb->prepare(
+				'SELECT COUNT(1) FROM information_schema.tables WHERE table_schema = %s AND table_name = %s',
+				DB_NAME,
+				$table_name
+			)
+		);
+
+		if ( ! $table_exists ) {
+			return;
+		}
+
 		$wpdb->insert(
 			$table_name,
 			array(
@@ -205,6 +218,19 @@ class Geo_Ai_Woo_Crawl_Tracker {
 	public function get_total_visits( $days = 30 ) {
 		global $wpdb;
 		$table_name = self::get_table_name();
+
+		// Check if table exists
+		$table_exists = $wpdb->get_var(
+			$wpdb->prepare(
+				'SELECT COUNT(1) FROM information_schema.tables WHERE table_schema = %s AND table_name = %s',
+				DB_NAME,
+				$table_name
+			)
+		);
+
+		if ( ! $table_exists ) {
+			return 0;
+		}
 
 		$since = gmdate( 'Y-m-d H:i:s', time() - ( $days * DAY_IN_SECONDS ) );
 

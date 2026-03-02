@@ -2,6 +2,22 @@
 
 All notable changes to GEO AI Woo will be documented in this file.
 
+## [0.4.0] - 2026-03-02
+
+### Fixed — Encoding
+- Fixed Cyrillic and special character encoding in llms.txt output
+- HTML entities (`&#x20B8;`, `&#8212;`, `&#187;`, etc.) are now properly decoded to UTF-8 characters
+- Tenge symbol (₸), em dashes (—), guillemets (») and other non-ASCII characters display correctly
+
+### Added — WordPress.org Compliance
+- "Third-Party Services" disclosure section in readme.txt (Anthropic and OpenAI API usage, ToS and Privacy Policy links)
+- API data disclosure notice in AI Description Generation settings section
+- Links to Anthropic and OpenAI privacy policies in admin UI
+
+### Changed
+- Version bump 0.3.0 → 0.4.0
+- Reduced readme.txt tags from 9 to 5 (WordPress.org guideline 12 compliance)
+
 ## [0.3.0] - 2026-03-02
 
 ### Added — Multilingual Support
