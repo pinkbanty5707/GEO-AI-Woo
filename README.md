@@ -8,7 +8,7 @@
 [![WordPress](https://img.shields.io/badge/WordPress-6.0%2B-blue.svg)](https://wordpress.org/)
 [![WooCommerce](https://img.shields.io/badge/WooCommerce-7.0%2B-purple.svg)](https://woocommerce.com/)
 
-An open-source WordPress plugin that optimizes your site for AI search engines like ChatGPT, Claude, Gemini, Perplexity, YandexGPT, GigaChat, and more.
+An open-source WordPress plugin that optimizes your site for AI search engines like ChatGPT, Claude, Gemini, Perplexity, DeepSeek, Grok, YandexGPT, GigaChat, and more.
 
 **Focus:** **WooCommerce-first** | **Zero-config setup**
 
@@ -24,9 +24,14 @@ Automatically generates `/llms.txt` and `/llms-full.txt` static files at your Wo
 | Bot | Provider |
 |-----|----------|
 | GPTBot | OpenAI / ChatGPT |
+| OAI-SearchBot | OpenAI / Copilot Search |
 | ClaudeBot | Anthropic / Claude |
 | Google-Extended | Google / Gemini |
 | PerplexityBot | Perplexity AI |
+| DeepSeekBot | DeepSeek |
+| GrokBot | xAI / Grok |
+| meta-externalagent | Meta / LLaMA |
+| PanguBot | Alibaba / Qwen |
 | YandexBot | Yandex / YandexGPT |
 | SputnikBot | Sber / GigaChat |
 | Bytespider | ByteDance / Douyin |

@@ -4,7 +4,7 @@ Tags: ai, seo, woocommerce, llms.txt, chatgpt
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 0.4.1
+Stable tag: 0.5.0
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -36,12 +36,17 @@ GEO AI Woo generates `/llms.txt` and `/llms-full.txt` files that help AI search 
 * Dashboard widget with statistics and bot tracking
 * Crawl tracker with GDPR-compliant IP anonymization
 
-**Supported AI Crawlers:**
+**Supported AI Crawlers (13):**
 
 * GPTBot (OpenAI / ChatGPT)
+* OAI-SearchBot (OpenAI / Copilot Search)
 * ClaudeBot (Anthropic / Claude)
 * Google-Extended (Google / Gemini)
 * PerplexityBot (Perplexity AI)
+* DeepSeekBot (DeepSeek)
+* GrokBot (xAI / Grok)
+* meta-externalagent (Meta / LLaMA)
+* PanguBot (Alibaba / Qwen)
 * YandexBot (Yandex / YandexGPT)
 * SputnikBot (Sber / GigaChat)
 * Bytespider (ByteDance / Douyin)
@@ -124,6 +129,15 @@ Yes. The plugin exposes a REST API at `/wp-json/geo-ai-woo/v1/` with endpoints f
 5. Live preview of llms.txt content
 
 == Changelog ==
+
+= 0.5.0 =
+**New AI Crawlers**
+* Added OAI-SearchBot (OpenAI / Copilot Search)
+* Added DeepSeekBot (DeepSeek)
+* Added GrokBot (xAI / Grok)
+* Added meta-externalagent (Meta / LLaMA)
+* Added PanguBot (Alibaba / Qwen)
+* Supported AI crawlers expanded from 8 to 13
 
 = 0.4.1 =
 **Localization**
@@ -229,6 +243,9 @@ Yes. The plugin exposes a REST API at `/wp-json/geo-ai-woo/v1/` with endpoints f
 * Multilingual support (7 languages)
 
 == Upgrade Notice ==
+
+= 0.5.0 =
+Adds support for 5 new AI crawlers: DeepSeek, Grok (xAI), Meta/LLaMA, Copilot Search, and Alibaba/Qwen. Total supported crawlers: 13. Regenerate your llms.txt after updating.
 
 = 0.4.1 =
 Added Turkish, Spanish, and Brazilian Portuguese translations.

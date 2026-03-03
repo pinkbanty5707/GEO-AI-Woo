@@ -2,6 +2,21 @@
 
 All notable changes to GEO AI Woo will be documented in this file.
 
+## [0.5.0] - 2026-03-03
+
+### Added — New AI Crawlers
+- OAI-SearchBot (OpenAI / Copilot Search)
+- DeepSeekBot (DeepSeek)
+- GrokBot (xAI / Grok)
+- meta-externalagent (Meta / LLaMA)
+- PanguBot (Alibaba / Qwen)
+
+### Changed
+- Version bump 0.4.1 → 0.5.0
+- Supported AI crawlers expanded from 8 to 13
+- Default bot_rules now include all 13 crawlers (set to "allow" by default)
+- Existing installations receive new bot rules via settings migration on update
+
 ## [0.4.1] - 2026-03-03
 
 ### Added — Localization

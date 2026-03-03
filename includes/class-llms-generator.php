@@ -25,14 +25,19 @@ class Geo_Ai_Woo_LLMS_Generator {
      * @var array
      */
     private $ai_bots = array(
-        'GPTBot'          => 'OpenAI / ChatGPT',
-        'ClaudeBot'       => 'Anthropic / Claude',
-        'Google-Extended' => 'Google / Gemini',
-        'PerplexityBot'   => 'Perplexity AI',
-        'YandexBot'       => 'Yandex / YandexGPT',
-        'SputnikBot'      => 'Sber / GigaChat',
-        'Bytespider'      => 'ByteDance / Douyin',
-        'Baiduspider'     => 'Baidu / ERNIE',
+        'GPTBot'               => 'OpenAI / ChatGPT',
+        'OAI-SearchBot'        => 'OpenAI / Copilot Search',
+        'ClaudeBot'            => 'Anthropic / Claude',
+        'Google-Extended'      => 'Google / Gemini',
+        'PerplexityBot'        => 'Perplexity AI',
+        'DeepSeekBot'          => 'DeepSeek',
+        'GrokBot'              => 'xAI / Grok',
+        'meta-externalagent'   => 'Meta / LLaMA',
+        'PanguBot'             => 'Alibaba / Qwen',
+        'YandexBot'            => 'Yandex / YandexGPT',
+        'SputnikBot'           => 'Sber / GigaChat',
+        'Bytespider'           => 'ByteDance / Douyin',
+        'Baiduspider'          => 'Baidu / ERNIE',
     );
 
     /**
