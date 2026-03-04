@@ -72,8 +72,8 @@ class Geo_Ai_Woo_Admin_Notices {
                 <strong><?php esc_html_e( 'GEO AI Woo activated!', 'geo-ai-woo' ); ?></strong>
                 <?php
                 printf(
-                    /* translators: %s: settings page URL */
                     wp_kses(
+                        /* translators: %s: settings page URL */
                         __( 'Visit <a href="%s">Settings</a> to configure AI optimization for your site.', 'geo-ai-woo' ),
                         array( 'a' => array( 'href' => array() ) )
                     ),
@@ -152,8 +152,8 @@ class Geo_Ai_Woo_Admin_Notices {
             $this->render_dismissible_notice(
                 'permalink',
                 sprintf(
-                    /* translators: %s: Permalink settings URL */
                     wp_kses(
+                        /* translators: %s: Permalink settings URL */
                         __( 'GEO AI Woo: Your permalink structure is set to "Plain". While the plugin uses static files, we recommend using pretty permalinks for best SEO results. <a href="%s">Change permalink settings</a>', 'geo-ai-woo' ),
                         array( 'a' => array( 'href' => array() ) )
                     ),

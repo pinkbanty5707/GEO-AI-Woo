@@ -4,7 +4,7 @@ Tags: ai, seo, woocommerce, llms.txt, chatgpt
 Requires at least: 6.0
 Tested up to: 6.9
 Requires PHP: 7.4
-Stable tag: 0.5.0
+Stable tag: 0.5.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
@@ -130,6 +130,14 @@ Yes. The plugin exposes a REST API at `/wp-json/geo-ai-woo/v1/` with endpoints f
 
 == Changelog ==
 
+= 0.5.1 =
+**WordPress Plugin Check Compliance**
+* Fixed unescaped URL output in SEO meta tags
+* Fixed translators comment placement for i18n functions
+* Fixed unsanitized nonce input before wp_verify_nonce()
+* Fixed unprefixed global variables in uninstall.php
+* Added PHPCS annotations for custom table queries and third-party plugin hooks
+
 = 0.5.0 =
 **New AI Crawlers**
 * Added OAI-SearchBot (OpenAI / Copilot Search)
@@ -243,6 +251,9 @@ Yes. The plugin exposes a REST API at `/wp-json/geo-ai-woo/v1/` with endpoints f
 * Multilingual support (7 languages)
 
 == Upgrade Notice ==
+
+= 0.5.1 =
+Fixes all errors and warnings from WordPress Plugin Check: output escaping, nonce sanitization, translators comments, global variable prefixing, and PHPCS annotations.
 
 = 0.5.0 =
 Adds support for 5 new AI crawlers: DeepSeek, Grok (xAI), Meta/LLaMA, Copilot Search, and Alibaba/Qwen. Total supported crawlers: 13. Regenerate your llms.txt after updating.

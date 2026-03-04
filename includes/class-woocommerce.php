@@ -150,7 +150,7 @@ class Geo_Ai_Woo_WooCommerce {
     public function save_product_data( $post_id ) {
         // Verify nonce
         if ( ! isset( $_POST['geo_ai_woo_product_data_nonce'] ) ||
-             ! wp_verify_nonce( wp_unslash( $_POST['geo_ai_woo_product_data_nonce'] ), 'geo_ai_woo_product_data' ) ) {
+             ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['geo_ai_woo_product_data_nonce'] ) ), 'geo_ai_woo_product_data' ) ) {
             return;
         }
 

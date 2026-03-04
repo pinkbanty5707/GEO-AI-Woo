@@ -179,7 +179,7 @@ class Geo_Ai_Woo_Bulk_Edit {
     public function save_quick_edit( $post_id, $post ) {
         // Check nonce — Quick Edit nonce
         if ( ! isset( $_POST['geo_ai_woo_quick_edit_nonce'] ) ||
-             ! wp_verify_nonce( wp_unslash( $_POST['geo_ai_woo_quick_edit_nonce'] ), 'geo_ai_woo_quick_edit' ) ) {
+             ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['geo_ai_woo_quick_edit_nonce'] ) ), 'geo_ai_woo_quick_edit' ) ) {
             return;
         }
 

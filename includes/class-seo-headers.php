@@ -56,11 +56,11 @@ class Geo_Ai_Woo_SEO_Headers {
             return;
         }
 
-        $llms_url      = esc_url( home_url( '/llms.txt' ) );
-        $llms_full_url = esc_url( home_url( '/llms-full.txt' ) );
+        $llms_url      = home_url( '/llms.txt' );
+        $llms_full_url = home_url( '/llms-full.txt' );
 
-        echo '<meta name="llms" content="' . $llms_url . '" />' . "\n";
-        echo '<meta name="llms-full" content="' . $llms_full_url . '" />' . "\n";
+        echo '<meta name="llms" content="' . esc_url( $llms_url ) . '" />' . "\n";
+        echo '<meta name="llms-full" content="' . esc_url( $llms_full_url ) . '" />' . "\n";
 
         // Multilingual hreflang alternate links
         if ( class_exists( 'Geo_Ai_Woo_Multilingual' ) ) {
@@ -71,8 +71,8 @@ class Geo_Ai_Woo_SEO_Headers {
 
                 foreach ( $languages as $lang ) {
                     $lang_file = $multilingual->get_llms_filename( $lang['code'], false );
-                    $lang_url  = esc_url( home_url( '/' . $lang_file ) );
-                    echo '<link rel="alternate" hreflang="' . esc_attr( $lang['code'] ) . '" href="' . $lang_url . '" type="text/plain" />' . "\n";
+                    $lang_url  = home_url( '/' . $lang_file );
+                    echo '<link rel="alternate" hreflang="' . esc_attr( $lang['code'] ) . '" href="' . esc_url( $lang_url ) . '" type="text/plain" />' . "\n";
                 }
             }
         }

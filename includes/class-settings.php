@@ -646,8 +646,8 @@ class Geo_Ai_Woo_Settings {
         </label>
         <p class="description">
             <?php
-            /* translators: %s: example HTTP header */
             printf(
+                /* translators: %s: example HTTP header */
                 esc_html__( 'Adds %s to HTTP response headers.', 'geo-ai-woo' ),
                 '<code>Link: &lt;.../llms.txt&gt;; rel="ai-content-index"</code>'
             );

@@ -148,7 +148,7 @@ class Geo_Ai_Woo_Meta_Box {
     public function save_meta_box( $post_id, $post ) {
         // Check nonce
         if ( ! isset( $_POST['geo_ai_woo_meta_box_nonce'] ) ||
-             ! wp_verify_nonce( wp_unslash( $_POST['geo_ai_woo_meta_box_nonce'] ), 'geo_ai_woo_meta_box' ) ) {
+             ! wp_verify_nonce( sanitize_text_field( wp_unslash( $_POST['geo_ai_woo_meta_box_nonce'] ) ), 'geo_ai_woo_meta_box' ) ) {
             return;
         }
 

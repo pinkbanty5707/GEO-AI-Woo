@@ -126,13 +126,13 @@ class Geo_Ai_Woo_Multilingual {
 	 */
 	private function get_wpml_languages() {
 		$languages      = array();
-		$wpml_languages = apply_filters( 'wpml_active_languages', null, array( 'skip_missing' => 0 ) );
+		$wpml_languages = apply_filters( 'wpml_active_languages', null, array( 'skip_missing' => 0 ) ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 		if ( ! is_array( $wpml_languages ) ) {
 			return $languages;
 		}
 
-		$default_lang = apply_filters( 'wpml_default_language', '' );
+		$default_lang = apply_filters( 'wpml_default_language', '' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 		foreach ( $wpml_languages as $lang ) {
 			$languages[] = array(
@@ -240,7 +240,7 @@ class Geo_Ai_Woo_Multilingual {
 
 		switch ( $this->provider ) {
 			case 'wpml':
-				do_action( 'wpml_switch_language', $lang_code );
+				do_action( 'wpml_switch_language', $lang_code ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 				break;
 
 			case 'polylang':
@@ -252,7 +252,7 @@ class Geo_Ai_Woo_Multilingual {
 			case 'trp':
 				// TranslatePress uses URL-based switching; set global for content queries
 				global $TRP_LANGUAGE;
-				$TRP_LANGUAGE = $lang_code;
+				$TRP_LANGUAGE = $lang_code; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 				break;
 		}
 	}
@@ -267,7 +267,7 @@ class Geo_Ai_Woo_Multilingual {
 
 		switch ( $this->provider ) {
 			case 'wpml':
-				do_action( 'wpml_switch_language', $this->original_language );
+				do_action( 'wpml_switch_language', $this->original_language ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 				break;
 
 			case 'polylang':
@@ -278,7 +278,7 @@ class Geo_Ai_Woo_Multilingual {
 
 			case 'trp':
 				global $TRP_LANGUAGE;
-				$TRP_LANGUAGE = $this->original_language;
+				$TRP_LANGUAGE = $this->original_language; // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
 				break;
 		}
 
@@ -293,7 +293,7 @@ class Geo_Ai_Woo_Multilingual {
 	public function get_current_language() {
 		switch ( $this->provider ) {
 			case 'wpml':
-				return apply_filters( 'wpml_current_language', '' );
+				return apply_filters( 'wpml_current_language', '' ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 
 			case 'polylang':
 				if ( function_exists( 'pll_current_language' ) ) {
@@ -340,7 +340,7 @@ class Geo_Ai_Woo_Multilingual {
 	public function get_post_language( $post_id ) {
 		switch ( $this->provider ) {
 			case 'wpml':
-				$lang_info = apply_filters( 'wpml_post_language_details', null, $post_id );
+				$lang_info = apply_filters( 'wpml_post_language_details', null, $post_id ); // phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound
 				return is_array( $lang_info ) && isset( $lang_info['language_code'] )
 					? $lang_info['language_code']
 					: '';

@@ -87,7 +87,7 @@ class Geo_Ai_Woo_Crawl_Tracker {
 	public static function drop_table() {
 		global $wpdb;
 		$table_name = self::get_table_name();
-		$wpdb->query( "DROP TABLE IF EXISTS {$table_name}" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
+		$wpdb->query( "DROP TABLE IF EXISTS {$table_name}" ); // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared,WordPress.DB.DirectDatabaseQuery,WordPress.DB.DirectDatabaseQuery.NoCaching,WordPress.DB.DirectDatabaseQuery.SchemaChange
 	}
 
 	/**
@@ -118,7 +118,7 @@ class Geo_Ai_Woo_Crawl_Tracker {
 		$table_name = self::get_table_name();
 
 		// Silently skip if table doesn't exist yet
-		$table_exists = $wpdb->get_var(
+		$table_exists = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->prepare(
 				'SELECT COUNT(1) FROM information_schema.tables WHERE table_schema = %s AND table_name = %s',
 				DB_NAME,
@@ -130,7 +130,7 @@ class Geo_Ai_Woo_Crawl_Tracker {
 			return;
 		}
 
-		$wpdb->insert(
+		$wpdb->insert( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery
 			$table_name,
 			array(
 				'bot_name'    => $bot_name,
@@ -182,7 +182,7 @@ class Geo_Ai_Woo_Crawl_Tracker {
 		$table_name = self::get_table_name();
 
 		// Check if table exists
-		$table_exists = $wpdb->get_var(
+		$table_exists = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->prepare(
 				'SELECT COUNT(1) FROM information_schema.tables WHERE table_schema = %s AND table_name = %s',
 				DB_NAME,
@@ -196,7 +196,7 @@ class Geo_Ai_Woo_Crawl_Tracker {
 
 		$since = gmdate( 'Y-m-d H:i:s', time() - ( $days * DAY_IN_SECONDS ) );
 
-		return $wpdb->get_results(
+		return $wpdb->get_results( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->prepare(
 				"SELECT bot_name, COUNT(*) as visit_count, MAX(accessed_at) as last_visit
 				FROM {$table_name}
@@ -220,7 +220,7 @@ class Geo_Ai_Woo_Crawl_Tracker {
 		$table_name = self::get_table_name();
 
 		// Check if table exists
-		$table_exists = $wpdb->get_var(
+		$table_exists = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->prepare(
 				'SELECT COUNT(1) FROM information_schema.tables WHERE table_schema = %s AND table_name = %s',
 				DB_NAME,
@@ -234,7 +234,7 @@ class Geo_Ai_Woo_Crawl_Tracker {
 
 		$since = gmdate( 'Y-m-d H:i:s', time() - ( $days * DAY_IN_SECONDS ) );
 
-		$count = $wpdb->get_var(
+		$count = $wpdb->get_var( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->prepare(
 				"SELECT COUNT(*) FROM {$table_name} WHERE accessed_at > %s", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 				$since
@@ -253,7 +253,7 @@ class Geo_Ai_Woo_Crawl_Tracker {
 
 		$cutoff = gmdate( 'Y-m-d H:i:s', time() - ( 90 * DAY_IN_SECONDS ) );
 
-		$wpdb->query(
+		$wpdb->query( // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery,WordPress.DB.DirectDatabaseQuery.NoCaching
 			$wpdb->prepare(
 				"DELETE FROM {$table_name} WHERE accessed_at < %s", // phpcs:ignore WordPress.DB.PreparedSQL.InterpolatedNotPrepared
 				$cutoff

@@ -2,6 +2,20 @@
 
 All notable changes to GEO AI Woo will be documented in this file.
 
+## [0.5.1] - 2026-03-04
+
+### Fixed — WordPress Plugin Check Compliance
+- Fixed unescaped URL output in SEO meta tags (`class-seo-headers.php`) — `esc_url()` now applied at echo, not at assignment
+- Fixed `translators:` comment placement in `class-admin-notices.php` and `class-settings.php` — moved directly above `__()` / `esc_html__()` calls
+- Fixed unsanitized nonce input in `class-meta-box.php`, `class-bulk-edit.php`, and `class-woocommerce.php` — added `sanitize_text_field()` before `wp_verify_nonce()`
+- Fixed unprefixed global variables in `uninstall.php` — wrapped cleanup logic in `geo_ai_woo_uninstall()` function
+- Added PHPCS ignore annotations for legitimate direct DB queries in `class-crawl-tracker.php` (custom table operations)
+- Added PHPCS ignore annotations for third-party WPML/TranslatePress hooks and globals in `class-multilingual.php`
+- Expanded PHPCS ignore annotations in `uninstall.php` for `DirectQuery`, `NoCaching`, `SchemaChange`, and `UnfinishedPrepare`
+
+### Changed
+- Version bump 0.5.0 → 0.5.1
+
 ## [0.5.0] - 2026-03-03
 
 ### Added — New AI Crawlers
