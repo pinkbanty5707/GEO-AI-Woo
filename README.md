@@ -1,6 +1,6 @@
 # GEO AI Woo
 
-![GEO AI Woo](Geo-AI-Woo.png)
+![GEO AI Woo](Geo-AI-Woo.png?v=2)
 
 AI Search Optimization for WordPress and WooCommerce.
 
@@ -266,7 +266,5 @@ GEO AI Woo is open-source software licensed under the [GPL v2](LICENSE).
 
 ## Credits
 
-- **Author:** Made Büro
-- **Website:** [geoai.run](https://www.geoai.run)
-- **GitHub:** [@madeburo](https://github.com/madeburo)
+- **Website:** [www.geoai.run](https://www.geoai.run)
 - **X:** [@imadeburo](https://x.com/imadeburo)
